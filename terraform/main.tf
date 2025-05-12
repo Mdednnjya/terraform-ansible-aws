@@ -19,6 +19,10 @@ resource "aws_instance" "web" {
 
   provisioner "local-exec" {
   command = "echo '[web]\n${self.public_ip} ansible_user=ubuntu ansible_ssh_private_key_file=/home/danan/.ssh/id_rsa' > ../ansible/hosts.ini"
+  }
 }
 
+output "instance_ip" {
+  description = "Public IP of the EC2 instance"
+  value       = aws_instance.web.public_ip
 }
