@@ -1,0 +1,9 @@
+ssh
+# Ignore Terraform files
+.terraform/
+*.tfstate
+*.tfstate.backup
+.terraform.lock.hclg
+
+# Ignore sensitive or unnecessary files
+*.log
